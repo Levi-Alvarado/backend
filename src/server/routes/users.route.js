@@ -9,5 +9,6 @@ router.post('/usuarios/login', usuarios.login)
 
 // Obtener usuario por token
 router.get('/usuarios', verifyToken, usuarios.getUserByToken)
+router.get('/test', usuarios.testSql)
 
 export default router

@@ -60,3 +60,8 @@ export const getUserByToken = async (req, res) => {
 
   return res.status(HTTP_STATUS.ok.code).json({ id, nombre, correo_electronico })
 }
+
+export const testSql = async (req, res) => {
+  const results = await sql.test()
+  res.status(HTTP_STATUS.ok.code).json(results)
+}

@@ -15,3 +15,6 @@ export const register = async (nombre, correo_electronico, contrasena) =>
 
 export const getUserByEmail = async (correo_electronico) =>
   await db('SELECT * FROM usuarios WHERE correo_electronico = $1;', [correo_electronico])
+
+export const test = async () =>
+  await db('SELECT NOW();') // SELECT NOW() AS now;
