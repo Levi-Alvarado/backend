@@ -16,4 +16,10 @@ app.use(routes.publications)
 app.use(routes.comments)
 app.listen(PORT, () => console.log(`SERVER UP in URL: http://localhost:${PORT}`))
 
+/* get errors middleware */
+app.use((err, req, res, next) => {
+  console.log('🦄 -> file: index.js:59 -> err', err)
+  res.status(500).send('Something broke!')
+})
+
 export default app
