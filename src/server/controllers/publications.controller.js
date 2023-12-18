@@ -68,6 +68,7 @@ export const updatePublication = async (req, res) => {
 }
 
 export const deletePublication = async (req, res) => {
+  console.log('🦄 -> file: publications.controller.js:98 -> deletePublication -> req.params', req.params)
   const { id } = req.params
   const { email } = getPayload(req.headers.authorization)
   const [{ id: user_id }] = await sql.getUserByEmail(email)
