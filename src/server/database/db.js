@@ -7,7 +7,8 @@ const config = {
   host: process.env.PG_HOST,
   port: process.env.PG_PORT,
   database: process.env.PG_DB,
-  allowExitOnIdle: true
+  allowExitOnIdle: true,
+  ssl: true
 }
 
 const pool = new Pool(config)
@@ -17,6 +18,7 @@ const db = (query, values) => pool
   .then(({ rows }) => rows)
   .catch(({ code, message }) => {
     const error = { status: '[ERROR]', code, message }
+    console.log(JSON.stringify(error))
     throw error
   })
 
