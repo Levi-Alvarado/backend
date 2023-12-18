@@ -11,7 +11,8 @@ const HTTP_STATUS = {
   },
   not_found: { code: 404, text: 'El usuario o la contraseña son incorrectos.' },
   internal_eerver_error: { code: 500 },
-  bad_request: { code: 400, text: 'Bad request.' }
+  bad_request: { code: 400, text: 'Bad request.' },
+  no_content: { code: 204 }
 }
 
 export default HTTP_STATUS
